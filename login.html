@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>WittyParrot - Login</title>
+	<meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge;chrome=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Circular Content Carousel with jQuery" />
+    <meta name="keywords" content="jquery, conent slider, content carousel, circular, expanding, sliding, css3" />
+    <meta name="author" content="Codrops" />
+    
+	
+	
+	<link rel="shortcut icon" href="../../images/favicon_ico">
+	
+    <!--(if target dist)>    
+    	<link rel="stylesheet" href="../../less/Production/desktop.{{rlsdate}}.min.css" type="text/css" />
+    <!(endif)-->
+   <!--(if target dist)>    
+		<script src="../../scripts/production/plugins.js"></script>
+    <!(endif)-->
+   <!--(if target dist)>    
+    	<script src="../../scripts/production/custom.{{rlsdate}}.min.js"></script>
+    <!(endif)-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  	//getScreensize();
+	  getLoginScreenSize();
+	  // Adding the conditional will only fire when the element has the class available
+	  			
+	$("#forgot_password_content").hide();
+	$('#login_form #login_signin').click(function() {
+		$("#forgot_password_content").hide();
+		$("#login_content").show("slow");
+		
+	});
+	
+	
+	$('#login_form #login_forgotpassword').click(function() {
+		$("#login_content").hide("slow");
+		$("#forgot_password_content").show("slow");
+	
+	});
+
+
+});
+
+
+function getLoginScreenSize(){
+var totalform = $("#login_form").height();
+var signinheader = $("#login_signin").innerHeight();
+var forgotpasswordheader = $("#login_forgotpassword").innerHeight();
+headerheight = 	signinheader + forgotpasswordheader;
+totalheightleft = totalform - headerheight ;
+$("#login_content").height(totalheightleft);
+}
+</script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script>
+$(function () {
+    $('#myCarousel').carousel({
+        interval:4000,
+        pause: "false"
+    });
+});
+$(function(){
+      $(window).resize(function(){
+    		  getLoginScreenSize();  
+          
+      });
+});
+</script>
+</head>
+<body>
+<div class="container">
+	<div class="row">
+	<div class="login_container col-xs-12 col-lg-10 no-pad center-block">
+    	<header class="login_header">
+        	<img src="../../images/widget_logo.png">
+        </header>
+        <div class="login_body">
+        	
+        	
+        	<div class="login_slider_container col-sm-8 hidden-xs no-pad">
+	        <div id="myCarousel" class="carousel slide">
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+    <li data-target="#myCarousel" data-slide-to="1"></li>
+    <li data-target="#myCarousel" data-slide-to="2"></li>
+  </ol>
+  <div class="carousel-inner">
+    <div class="item active">
+      <img src="../iPad_app_login_images1.png">
+    </div>
+    <div class="item">
+      <img src="../iPad_app_login_images2.png">
+    </div>
+    <div class="item">
+      <img src="../iPad_app_login_images2.png">
+    </div>
+    <div class="item">
+      <img src="../iPad_app_login_images2.png">
+    </div>
+  </div>
+  <!-- Controls -->
+  <a class="left carousel-control" href="#myCarousel" data-slide="prev">
+    <span class="icon-prev"></span>
+  </a>
+  <a class="right carousel-control" href="#myCarousel" data-slide="next">
+    <span class="icon-next"></span>
+  </a>  
+</div>
+	            
+            </div>
+            
+            
+            
+            
+            <div class="login_form_container col-xs-12 col-sm-4">
+            <div class="login_form" id="login_form">
+            <h2 class="login_form_header" id="login_signin">Sign In</h2>
+            <div class="content" id="login_content">
+	            <form>
+		            <div class="login_fields">
+		            	<input type="text" placeholder="Username" id="">
+		                <input type="password" placeholder="Password" id="">
+		                <div class="login_checkbox">
+		                	<input type="checkbox" id=""> Stay logged in
+		                </div>
+		                <input type="submit" value="Sign in" class="submin_button">
+		                <div class="login_createnewaccount"><a href="">Create New Account</a></div>
+		                <div class="login_version_details">
+		                	<label class="login_wp_settings"><a href="#">Settings</a></label><br/>
+		                	<label class="login_wp_version">Version: <span>2.2.0.2</span></label>
+		                </div>
+		            </div>
+		     
+	            </form>
+	         </div>
+            <h2 class="login_form_header" id="login_forgotpassword">Forgot Password</h2>
+            <div class="content" id="forgot_password_content">
+	            <form>
+		            <div class="login_fields">
+		            	<div class="login_password_label" >Enter your username or email address associated with your account.</div>
+		                <input type="password" placeholder="Password" id="">
+		                
+		            </div>
+		     
+	            </form>
+	         </div>
+            </div>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+</body>
+</html>
